@@ -35,7 +35,7 @@ int main(void) {
 	// Eingabe
 	printf("\n-------------------------------------------\n");
 
-	printf("\n Welche Zahl soll poztenziert werden ");
+	printf("\n Welche Zahl soll potenziert werden ");
 	scanf("%lf", &zahl);//Basis einlesen
 	printf("\n Welche Potenz (natürliche Zahl!)");
 	scanf("%d", &n);//potenz einlesen
