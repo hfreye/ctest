@@ -44,20 +44,25 @@ int main(void) {
 	long n ; //Anzahl der Wurzeln
 	// long weil ich dachte n muss GROSS sein (siehe aufgabenstellung) aber schon ab n=20 ist ende mit der Genauigkeit (bei normaler Ausgabe), darum reicht auch locker int!
 	double a, w; // Basis und Wurzel
-
+	//nur für die automatischen experimente
+	int anfang,ende;
+	//Ich soll mit Basis 2 und großen n experimentieren, das lassen wir mal gleich den Rechner machen
+	/* Dann brauche ich eine andere Eingabe!*/
 	printf("\n----------------------------------------------------------------\n");
-	printf("\n Aus welcher Zahl soll die Wurzel gezogen werden (a)?");
-	scanf("%lf", &a);//Basis einlesen
-	printf("\n Wie oft soll die Wurzel gezogen werden (n)?");
-	scanf("%ld", &n);//potenz einlesen
+	printf("\n mit welchem n beginnen?");
+	scanf("%d", &anfang);//Anfang des experiments einlesen
+	printf("\n Bis zu welchem n?");
+	scanf("%d", &ende);//Ende des Experiments einlesen
+	//sinnvolle Eingabnen z.B. 1 und 30
 
-	//Funktionsaufruf
-	w = wurzeln(a, n);
-
-	//Ausgabe
-	printf("\n Das Ergebnis ist: %f \n\n", w);
-	printf("\n Das Ergebnis ist: %.17g \n\n", w); //Für mehr Kommastellen
-
+	//Funktionsaufruf - jetzt eine Schleife
+	a = 2; //fest für das Experiment
+	for (n = anfang; n <= ende; n++){
+		w = wurzeln(a, n);
+		//Ausgabe
+		//printf("\n Das Ergebnis ist: %f \n\n", w);
+		printf("\n Das Ergebnis ist: %.17g ", w); //Für max. Kommastellen
+	}
 	return (0);
 }
 
