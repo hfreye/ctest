@@ -31,7 +31,7 @@ void VektorSumme(int z[], int x[], int y[], int n ){
 		z[n] = x[n] + y[n];
 	}
 }
-// nur zur Kontrolle - Vektoren verkehrtherum
+/* nur zur schnellen Kontrolle - Vektoren verkehrtherum untereinander
 void printIntVektor(int x[], int n ){
 	printf("\n [");
 	while (n>0){//solange die Anzahl der Elemente größer Null
@@ -43,7 +43,7 @@ void printIntVektor(int x[], int n ){
 	}
 	printf("]\n");
 }
-
+*/
 /**
  * Hauptroutine
  */
@@ -62,9 +62,60 @@ int main(void) {
 	VektorSumme(z, x, y, n);
 
 	//Ausgabe am Ende die Zeichenkette
-	printIntVektor(x,n);
-	printIntVektor(y,n);
-	printIntVektor(z,n);
+	//printIntVektor(x,n);
+	//printIntVektor(y,n);
+	//printIntVektor(z,n);
+
+	/*  Was heißt zeilenweise tabellarisch */
+	/*
+		 * Variante 1
+		 *  - jede Zeile ein Vektor
+		 */
+
+		printf("\n   x = [");
+		for (i = 0; i < n; i++){
+			if (i >0 ) { //außer beim "ersten" -> Komma (vor)ran
+				printf(", ");
+			}
+			printf("%5i",x[i]);  //%5i bedeuted 5 Stellen Platz für die Zahl (rechtsbündig)
+		}
+		printf("]\n");
+
+
+		printf("\n   y = [");
+		for (i = 0; i < n; i++){
+			if (i >0 ) { //außer beim "ersten" -> Komma (vor)ran
+				printf(", ");
+			}
+			printf("%5i",y[i]);
+		}
+		printf("]\n");
+
+
+		printf("\n z=x+y [");
+		for (i = 0; i < n; i++){
+			if (i >0 ) { //außer beim "ersten" -> Komma (vor)ran
+				printf(", ");
+			}
+			printf("%5i",z[i]);
+		}
+		printf("]\n");
+
+
+		/*
+		 * Variante 2
+		 *  - jede Spalte ein Vektor trotzdem zeilenweise ausgegeben ;-)
+		 *  schafft man mit einer Schleife
+		 */
+		printf("\n----------------------------------------------------------------\n");
+		printf("\n      x      y  z=x+y\n");
+
+		for (i = 0; i < n; i++){
+			printf("%7i",x[i]);
+			printf("%7i",y[i]);
+			printf("%7i\n",z[i]);
+		}
+
 	return (0);
 }
 
