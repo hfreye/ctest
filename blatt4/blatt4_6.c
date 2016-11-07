@@ -59,21 +59,21 @@ int main(void)  // Kopf des Hauptprogramms 'main'
 	   s für Subtraktion,\n\
 	   m für Multiplikation,\n\
 	   d für Division.\nIhre Wahl: ");
-  scanf("%c",&wahl);
+  scanf(" %c",&wahl);
   
-  if(wahl==(int)'a')
+  if(wahl==97)
   {
     ergebnis=addition(zahl1,zahl2);
   }
-  else if(wahl==(int)'s')
+  else if(wahl==115)
   {
     ergebnis=subtraktion(zahl1,zahl2);
   }
-  else if(wahl==(int)'m')
+  else if(wahl==109)
   {
     ergebnis=multiplikation(zahl1,zahl2);
   }
-  else if(wahl==(int)'d')
+  else if(wahl==100)
   {
     // Achtung: Wert von 'warnung' kann ver"andert werden
     ergebnis=division(zahl1,zahl2,&warnung);
@@ -89,15 +89,15 @@ int main(void)  // Kopf des Hauptprogramms 'main'
   {
     printf("Das Ergebnis der ");
 
-    if(wahl==(int)'a')
+    if(wahl==97)
     {
  	printf("Addition");
     }
-    else if(wahl==(int)'s')
+    else if(wahl==115)
     {
       printf("Subtraktion");
     }
-    else if(wahl==(int)'m')
+    else if(wahl==109)
     {
       printf("Multiplikation");
     }
