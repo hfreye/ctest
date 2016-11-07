@@ -61,25 +61,15 @@ int main(void)  // Kopf des Hauptprogramms 'main'
 	   d für Division.\nIhre Wahl: ");
   scanf(" %c",&wahl);
   
-  if(wahl==97)
-  {
-    ergebnis=addition(zahl1,zahl2);
-  }
-  else if(wahl==115)
-  {
-    ergebnis=subtraktion(zahl1,zahl2);
-  }
-  else if(wahl==109)
-  {
-    ergebnis=multiplikation(zahl1,zahl2);
-  }
-  else if(wahl==100)
-  {
+  switch (wahl){
+  case 97 : ergebnis=addition(zahl1,zahl2);break;
+  case 115 : ergebnis=subtraktion(zahl1,zahl2); break;
+  case 109 : ergebnis=multiplikation(zahl1,zahl2);break;
+  case 100 :
     // Achtung: Wert von 'warnung' kann ver"andert werden
     ergebnis=division(zahl1,zahl2,&warnung);
-  }
-  else
-  {
+    break;
+  default :
     printf("Wegen Ihrer unzulaessigen Wahl wird das Programm beendet.\n");
     return(1);
   }
@@ -88,22 +78,11 @@ int main(void)  // Kopf des Hauptprogramms 'main'
   if(warnung==0) // keine Divisions-Warnung
   {
     printf("Das Ergebnis der ");
-
-    if(wahl==97)
-    {
- 	printf("Addition");
-    }
-    else if(wahl==115)
-    {
-      printf("Subtraktion");
-    }
-    else if(wahl==109)
-    {
-      printf("Multiplikation");
-    }
-    else
-    {
-      printf("Division");
+    switch (warnung){
+		case 97 : printf("Addition");break;
+		case 115 : printf("Subtraktion"); break;
+		case 109 : printf("Multiplikation");break;
+		default : printf("Division");break;
     }
   }
   else  // Divisions-Warnung
