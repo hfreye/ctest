@@ -28,7 +28,7 @@ int main(void) {
 	z4 = getchar(); enter = getchar();
 
 	//Ausgabe
-	printf("Der ASCII-Code Ihrer Eingabe lautete: %c %c %c %c \n\n",z1,z2,z3,z4);
+	printf("Der ASCII-Code Ihrer Eingabe lautete: %i %i %i %i \n\n",z1,z2,z3,z4);
 	return (0);
 }
 
